@@ -22,7 +22,13 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
        $data = $request->validate([
-        'category_id' => 'required|integer'
+        'category_id' => 'required|integer',
+        'name'=>'required',
+        'category'=>'required',
+        'stock'=>'requried | numeric',
+        'photopath'=>'required',
+        'price'=>'requried'
+
        ])
     }
 
