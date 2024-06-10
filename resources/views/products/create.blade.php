@@ -6,10 +6,11 @@
    <form action="">
     <div class="mb-5">
         <select name="category_id" id="" class="w-full p-3 border border-gray-300 rounded-lg">
-            <option value=""Select Category></option>
-            <option value="">Category 1</option>
-            <option value="">Category 2</option>
-            <option value="">Category 3</option>
+           @foreach($categories as $category)
+           <option value="{{$category->id}}">{{$category->name}}</option>
+           @endforeach
+           
+           
         </select>
     </div>
 
