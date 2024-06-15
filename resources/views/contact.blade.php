@@ -20,9 +20,7 @@
             <div class="grid md:grid-cols-2">
                 <div class="h-full pr-6">
                     <p class="mt-3 mb-12 text-lg text-gray-600 dark:text-slate-400">
-                        Class aptent taciti sociosqu ad
-                        litora torquent per conubia nostra, per inceptos himenaeos. Duis nec ipsum orci. Ut scelerisque
-                        sagittis ante, ac tincidunt sem venenatis ut.
+                      GET IN TOUCH WITH US !
                     </p>
                     <ul class="mb-6 md:mb-0">
                         <li class="flex">
@@ -39,8 +37,8 @@
                             <div class="ml-4 mb-4">
                                 <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Our Address
                                 </h3>
-                                <p class="text-gray-600 dark:text-slate-400">1230 Maecenas Street Donec Road</p>
-                                <p class="text-gray-600 dark:text-slate-400">New York, EEUU</p>
+                                <p class="text-gray-600 dark:text-slate-400">Gaindakot-01, Nawalpur</p>
+                                <p class="text-gray-600 dark:text-slate-400">Nepal</p>
                             </div>
                         </li>
                         <li class="flex">
@@ -58,8 +56,8 @@
                             <div class="ml-4 mb-4">
                                 <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Contact
                                 </h3>
-                                <p class="text-gray-600 dark:text-slate-400">Mobile: +1 (123) 456-7890</p>
-                                <p class="text-gray-600 dark:text-slate-400">Mail: tailnext@gmail.com</p>
+                                <p class="text-gray-600 dark:text-slate-400">Mobile: +977 9812211443</p>
+                                <p class="text-gray-600 dark:text-slate-400">Mail: kaflesohan1@gmail.com</p>
                             </div>
                         </li>
                         <li class="flex">
