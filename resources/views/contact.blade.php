@@ -72,8 +72,8 @@
                             <div class="ml-4 mb-4">
                                 <h3 class="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Working
                                     hours</h3>
-                                <p class="text-gray-600 dark:text-slate-400">Monday - Friday: 08:00 - 17:00</p>
-                                <p class="text-gray-600 dark:text-slate-400">Saturday &amp; Sunday: 08:00 - 12:00</p>
+                                <p class="text-gray-600 dark:text-slate-400">Monday - Friday: 09:00 - 06:00</p>
+                                <p class="text-gray-600 dark:text-slate-400">Saturday &amp; Sunday: 09:00 - 06:00</p>
                             </div>
                         </li>
                     </ul>
