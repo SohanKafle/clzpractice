@@ -29,7 +29,7 @@
                 <td class="border p-3">{{$product->description}}</td>
                 <td class="border p-3">{{$product->price}}</td>
                 <td class="border p-3">{{$product->stock}}</td>
-                <td class="border p-3">{{$product->category_id}}</td>
+                <td class="border p-3">{{$product->category->name}}</td>
 
                 <td class="border p-3">
                     <a href="{{route('products.edit',$product->id)}}" class="bg-blue-500 text-white p-2 rounded-lg">Edit</a>
