@@ -24,7 +24,9 @@
             @foreach($products as $product)
               
             <tr class="text-center">
-                <td class="border p-3">{{$product->photopath}}</td>
+                <td class="border p-3">
+                    <img src="{{asset('images/products/'.$product->photopath)}}" class="w-24" alt="">
+                </td>
                 <td class="border p-3">{{$product->name}}</td>
                 <td class="border p-3">{{$product->description}}</td>
                 <td class="border p-3">{{$product->price}}</td>
