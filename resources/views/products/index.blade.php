@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<h2 class="font-bold text-3xl text-amber-600  ">Products</h2>
+<h2 class="font-bold text-3xl text-amber-600">Products</h2>
 <hr class="h-1 bg-amber-600">
 
 <div class="mt-10 text-right">

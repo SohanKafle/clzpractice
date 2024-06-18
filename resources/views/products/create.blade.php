@@ -3,7 +3,7 @@
 <h2 class="font-bold text-3xl text-amber-600">Create Products</h2>
 <hr class="h-1 bg-amber-600">
 <div class="mt-10"> 
-   <form action="">
+    <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
     <div class="mb-5">
         <select name="category_id" id="" class="w-full p-3 border border-gray-300 rounded-lg">
            @foreach($categories as $category)

@@ -23,15 +23,15 @@ class ProductsController extends Controller
 
   public function store(Request $request)
   {
-    $data = $request->validate([
-      'category_id' => 'required|integer',
-      'name' => 'required',
-      'category' => 'required',
-      'stock' => 'requried | numeric',
-      'photopath' => 'required|image',
-      'price' => 'requried|integer'
-    
-    ]);
+      $data = $request->validate([
+          'name' => 'required',
+          'description' => 'required',
+          'price' => 'required|integer',
+          'stock' => 'required|integer',
+          'category_id' => 'required',
+          'photopath' => 'required|image',
+      ]);
+      
     $photoname = time().'.'.$request->photopath->extension();
     $request->photopath->move(public_path('images/products'), $photoname);
     $data['photopath'] = $photoname;
