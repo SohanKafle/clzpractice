@@ -15,26 +15,46 @@
 
             <div class="mb-5">
                 <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Product Name"
-                    name="name">
+                    name="name" value="{{old('name')}}">
+                    @error('name')
+                    <div class="text-red-500 mt-2 text-sm">
+                        {{$message}}
+                    </div>
+                    @enderror
             </div>
 
             <div class="mb-5">
                 <textarea name="description" id="" cols="30" rows="5"
-                    class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Product Description"></textarea>
+                    class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Product Description">{{old('description')}}</textarea>
             </div>
 
             <div class="mb-5">
                 <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Price"
-                    name="price">
+                    name="price" value="{{old('price')}}">
+                    @error('price')
+                    <div class="text-red-500 mt-2 text-sm">
+                        {{$message}}
+                    </div>
+                    @enderror
             </div>
 
             <div class="mb-5">
                 <input type="text" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Stock"
-                    name="stock">
+                    name="stock" value="{{old('stock')}}">
+                    @error('stock')
+                    <div class="text-red-500 mt-2 text-sm">
+                        {{$message}}
+                    </div>
+                    @enderror
             </div>
 
             <div class="mb-5" flex gap-5 justify-center>
                 <input type="file" class="w-full p-3 border border-gray-300 rounded-lg" name="photopath">
+                @error('photopath')
+                <div class="text-red-500 mt-2 text-sm">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
 
             <div class="mb-5 flex gap-5 justify-center">

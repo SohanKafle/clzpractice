@@ -41,11 +41,31 @@ class ProductsController extends Controller
 
   public function edit($id)
   {
+    $products = Products::find($id);
+    $categories = Category::orderBy('priority')->get();
+    return view('products.edit',compact('products','categories'));
   }
 
   public function update(Request $request, $id)
   {
+    $data = $request->validate([
+      'name' => 'required',
+      'description' => 'required',
+      'price' => 'required|integer',
+      'stock' => 'required|integer',
+      'category_id' => 'required',
+      'photopath' => 'image',
+  ]);
+  $products = Products::find($id);
+  $data['photopath'] = $products->photopath;
+  if($request->hasFile('photopath')){
+      $photoname = time().'.'.$request->photopath->extension();
+      $request->photopath->move(public_path('images/products'), $photoname);
+      $data['photopath'] = $photoname;
   }
+  $products->update($data);
+  return redirect()->route('products.index')->with('success','Product updated successfully.');
+}
 
   public function delete($id)
   {
