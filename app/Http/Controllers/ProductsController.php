@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Products;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductsController extends Controller
 {
@@ -61,6 +62,8 @@ class ProductsController extends Controller
   if($request->hasFile('photopath')){
       $photoname = time().'.'.$request->photopath->extension();
       $request->photopath->move(public_path('images/products'), $photoname);
+      //delete old path
+      File::delete(public_path('images/products/'.$products->photopath));
       $data['photopath'] = $photoname;
   }
   $products->update($data);
@@ -69,5 +72,9 @@ class ProductsController extends Controller
 
   public function delete($id)
   {
+    $products = Products::find($id);
+    File::delete(public_path('images/products/'.$products->photopath));
+    $products-> delete();
+    return redirect()->route('products.index')->with('success','Product deleted successfully.');
   }
 }

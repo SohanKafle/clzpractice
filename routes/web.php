@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -9,7 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class,'home'])-> name('home');
 Route::get('/about', [PagesController::class,'about'])-> name('about');
 Route::get('/contact', [PagesController::class,'contact'])-> name('contact');
-Route::get('/dashboard', [PagesController::class,'dashboard'])-> name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class,'dashboard'])-> name('dashboard');
 
 Route::get('/categories', [CategoryController::class,'index'])-> name('categories.index');
 Route::get('/categories/create', [CategoryController::class,'create'])-> name('categories.create');
