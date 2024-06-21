@@ -42,8 +42,11 @@
                     class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Users</a>
                 <a href="{{route('products.index')}}"
                     class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Products</a>
-                <a href="{{route('logout')}}"
-                    class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Logout</a>
+              <form action="{{route('logout')}}" method="POST" class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">
+                @csrf
+                <button type="submit" class="block w-full text-left">Logout</button>
+                
+              </form>
             </div>
         </div>
         <div class="p-4 flex-1">
