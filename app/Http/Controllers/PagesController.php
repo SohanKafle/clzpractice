@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     public function home()
     {
-        return view('welcome');
+        $products=Products::latest()->limit(3)->get();
+        return view('welcome', compact('products'));
     }
 
     public function about()
