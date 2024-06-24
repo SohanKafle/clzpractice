@@ -19,7 +19,7 @@
                 $categories = App\Models\Category::orderBy('priority')->get();
             @endphp
             @foreach ($categories as $category)
-                <a href="">{{ $category->name }}</a>
+                <a href="{{route('categoryproducts',$category->id)}}">{{ $category->name }}</a>
             @endforeach
 
             <a href="{{ route('login') }}">Login</a>

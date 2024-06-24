@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $products=Products::latest()->limit(3)->get();
+        $products=Products::latest()->limit(5)->get();
         return view('welcome', compact('products'));
     }
 
@@ -23,8 +24,10 @@ class PagesController extends Controller
         return view('contact');
     }
 
-    public function dashboard()
+    public function categoryproducts($catid)
     {
-        return view('dashboard');
+        $category=Category::find($catid);
+        $products=Products::where('category_id',$catid)->paginate(3);
+        return view('categoryproducts', compact('products','category'));
     }
 }
