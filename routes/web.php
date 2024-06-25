@@ -12,6 +12,9 @@ Route::get('/about', [PagesController::class,'about'])-> name('about');
 Route::get('/contact', [PagesController::class,'contact'])-> name('contact');
 Route::get('/categoryproducts/{catid}', [PagesController::class,'categoryproducts'])-> name('categoryproducts');
 
+Route::get('/viewproducts/{id}', [PagesController::class,'viewproducts'])-> name('viewproducts');
+
+Route::middleware('auth')->group(function() {
 Route::get('/dashboard', [DashboardController::class,'dashboard'])-> name('dashboard');
 
 Route::get('/categories', [CategoryController::class,'index'])-> name('categories.index');
@@ -28,13 +31,8 @@ Route::get('/products/{id}/edit',[ProductsController::class,'edit'])->name('prod
 Route::post('/products/{id}/update',[ProductsController::class,'update'])->name('products.update');
 Route::get('/products/{id}/delete',[ProductsController::class,'delete'])->name('products.delete');
 
+});
 
-
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
