@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Login</title>
     @vite('resources/css/app.css', 'resources/js/app.js')
 </head>
 <body>
@@ -25,6 +25,7 @@
                     </div>
                     <button type="submit" class="bg-blue-500 text-white py-2 w-full rounded-lg mt-2">Login</button>
                 </form>
+                <p class="mt-4">Don't have an account? <a href="{{route('register')}}" class="text-blue-500">Register</a></p>
             </div>
         </div>
     </div>

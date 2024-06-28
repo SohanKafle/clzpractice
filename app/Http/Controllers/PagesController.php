@@ -33,6 +33,7 @@ class PagesController extends Controller
     public function viewproducts($id)
     {
         $product=Products::find($id);
-        return view('viewproducts', compact('product'));
+        $relatedproducts=Products::where('category_id',$product->category_id)->where('id','!=',$id)->get();
+        return view('viewproducts', compact('product','relatedproducts'));
     }
 }

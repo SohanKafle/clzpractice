@@ -1,22 +1,31 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="grid grid-cols-2 gap-8 px-24 py-8">
+<div class="grid grid-cols-4 gap-10 px-24 py-10">
+    <div>
+        <img src="{{asset('images/products/'.$product->photopath)}}" alt="product" class="w-full h-64 object-cover shadow-lg rounded-lg">
+    </div>
+    <div class="col-span-2 border-r">
+        <h1 class="text-4xl font-bold">{{$product->name}}</h1>
+        <p class="text-xl font-thin mt-4">Rs. {{$product->price}}</p>
+        <p class="text-xl font-thin mt-4">{{$product->description}}</p>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4">Add to Cart</button>
+    </div>
+    <div>
+        <p class="text-sm font-thin mt-4">Free Delivery</p>
+        <p class="text-sm font-thin mt-4">7 Day Return</p>
+        <p class="text-sm font-thin mt-4">Terms and Conditions Apply</p>
+    </div>
+</div>
+
+<div class="grid grid-cols-3 gap-8 px-24 py-8">   
+    <h2 class="text-3xl font-semibold col-span-3">Related Products</h2>
+    @foreach($relatedproducts as $relatedproduct)
     <div class="p-2">
-        <img src="{{ asset('images/products/' . $product->photopath) }}" alt="{{ $product->name }}" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <img src="{{ asset('images/products/' . $relatedproduct->photopath) }}" alt="{{ $relatedproduct->name }}" class="w-full h-64 object-cover rounded-lg shadow-md">
+        <h1 class="text-2xl font-semibold mt-4">{{ $relatedproduct->name }}</h1>
+        <p class="text-xl font-thin mt-2">Rs. {{ $relatedproduct->price }}</p>
     </div>
-    <div class="p-2">
-        <h2 class="text-4xl font-semibold">{{ $product->name }}</h2>
-        <p class="text-xl font-thin mt-4">{{ $product->description }}</p>
-        <div class="flex justify-between items-center mt-4">
-            <span class="text-2xl font-thin">Rs. {{ $product->price }}</span>
-            <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Add to Cart</button>
-        </div>
-    </div>
-    <div class="col-span-2 mt-8">
-        <p class="text-sm font-thin">Free Delivery</p>
-        <p class="text-sm font-thin mt-2">7 Days Return Policy</p>
-        <p class="text-sm font-thin mt-2">Terms and Conditions Apply</p>
-    </div>
+    @endforeach
 </div>
 @endsection
