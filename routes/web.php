@@ -14,7 +14,7 @@ Route::get('/categoryproducts/{catid}', [PagesController::class,'categoryproduct
 
 Route::get('/viewproducts/{id}', [PagesController::class,'viewproducts'])-> name('viewproducts');
 
-Route::middleware('auth')->group(function() {
+Route::middleware(['auth','isadmin'])->group(function() {
 Route::get('/dashboard', [DashboardController::class,'dashboard'])-> name('dashboard');
 
 Route::get('/categories', [CategoryController::class,'index'])-> name('categories.index');
