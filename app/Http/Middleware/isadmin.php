@@ -19,7 +19,7 @@ class isadmin
             return redirect()->route('home');
         }
         else{
-        return redirect()->route('dashboard');
+            return $next($request);
         }
     }
 }
