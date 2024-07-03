@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PagesController;
@@ -13,6 +14,12 @@ Route::get('/contact', [PagesController::class,'contact'])-> name('contact');
 Route::get('/categoryproducts/{catid}', [PagesController::class,'categoryproducts'])-> name('categoryproducts');
 
 Route::get('/viewproducts/{id}', [PagesController::class,'viewproducts'])-> name('viewproducts');
+
+Route::middleware(['auth'])->group(function() {
+    // Route::get('/cart', [CartController::class,'index'])->name('cart.index');
+    Route::post('/cart/store', [CartController::class,'store'])->name('cart.store');
+    // Route::get('/cart/{id}/delete', [CartController::class,'delete'])->name('cart.delete');
+});
 
 Route::middleware(['auth','isadmin'])->group(function() {
 Route::get('/dashboard', [DashboardController::class,'dashboard'])-> name('dashboard');
@@ -32,6 +39,8 @@ Route::post('/products/{id}/update',[ProductsController::class,'update'])->name(
 Route::get('/products/{id}/delete',[ProductsController::class,'delete'])->name('products.delete');
 
 });
+
+
 
 
 Route::middleware('auth')->group(function () {
