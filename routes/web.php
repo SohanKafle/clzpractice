@@ -16,7 +16,7 @@ Route::get('/categoryproducts/{catid}', [PagesController::class,'categoryproduct
 Route::get('/viewproducts/{id}', [PagesController::class,'viewproducts'])-> name('viewproducts');
 
 Route::middleware(['auth'])->group(function() {
-    // Route::get('/cart', [CartController::class,'index'])->name('cart.index');
+    Route::get('/mycart', [CartController::class, 'mycart'])->name('mycart');
     Route::post('/cart/store', [CartController::class,'store'])->name('cart.store');
     // Route::get('/cart/{id}/delete', [CartController::class,'delete'])->name('cart.delete');
 });

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -22,11 +23,11 @@
                 <a href="{{route('categoryproducts',$category->id)}}">{{ $category->name }}</a>
             @endforeach
             @auth
-                <a href="">Hi, {{auth()->user()->name}}</a>
-                
-            <form action="{{route('logout')}}" method="POST" class="inline">
+            <a href="">Hi, {{auth()->user()->name}}</a>
+            <a href="{{route('mycart')}}"><i class="ri-shopping-cart-2-line"></i></a>
+            <form action="{{route('logout')}}" method="post" class="inline">
                 @csrf
-                <button type="submit">Logout</button>
+                <button type="submit"><i class="ri-logout-box-r-line"></i></button>
             </form>
             @else
             <a href="{{ route('login') }}">Login</a>
