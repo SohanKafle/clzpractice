@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="grid grid-cols-4 gap-10 px-24 py-10">
     <div>
