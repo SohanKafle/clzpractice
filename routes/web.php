@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProfileController;
@@ -19,6 +20,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/cart/store', [CartController::class, 'store'])->name('cart.store');
     Route::get('/mycart', [CartController::class, 'mycart'])->name('mycart');
     // Route::get('/cart/{id}/delete', [CartController::class,'delete'])->name('cart.delete');
+    Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
 });
 
 Route::middleware(['auth','isadmin'])->group(function() {
