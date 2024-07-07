@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Products;
 use Illuminate\Http\Request;
 
@@ -35,5 +36,10 @@ class PagesController extends Controller
         $product=Products::find($id);
         $relatedproducts=Products::where('category_id',$product->category_id)->where('id','!=',$id)->get();
         return view('viewproducts', compact('product','relatedproducts'));
+    }
+    public function myprofile()
+    {
+        $orders = Order::where('user_id', auth()->user()->id)->get();
+        return view('myprofile',compact('orders'));
     }
 }

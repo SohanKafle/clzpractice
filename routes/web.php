@@ -21,6 +21,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/mycart', [CartController::class, 'mycart'])->name('mycart');
     // Route::get('/cart/{id}/delete', [CartController::class,'delete'])->name('cart.delete');
     Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
+    Route::get('/myprofile', [PagesController::class, 'myprofile'])->name('myprofile');
 });
 
 Route::middleware(['auth','isadmin'])->group(function() {
