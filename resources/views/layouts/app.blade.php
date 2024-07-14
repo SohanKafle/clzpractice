@@ -36,9 +36,6 @@
                 <a href="{{ route('categories.index') }}" class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Categories</a>
                 <a href="{{ route('orders.index') }}" class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Orders</a>
                 <a href="" class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Users</a>
-                {{-- <a href="{{route('orders.index')}}"
-                class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Orders</a>
-                --}}
                 <a href="{{ route('products.index') }}" class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">Products</a>
                 <form action="{{ route('logout') }}" method="POST" class="text-xl block pl-4 p-2 m-2 border-b border-amber-600 hover:bg-amber-600 hover:text-white">
                     @csrf
